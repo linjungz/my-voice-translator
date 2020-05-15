@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/shoelace.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1>
+          Serverless Translator
+      </h1>
+      
+      <div id="error" class="isa_error"></div>
+      <div>
+          <p>Speak Chinese and the translator will translate it into multiple language and speak it</p>
+      </div>
+      <div>
+          <label>Status: </label>   
+          <label id=status>Not Ready</label>
+      </div>
+
+      <div class="row">
+        <div class="col">
+            <button id="start_button" class="button-xl" title="Start Recording" >
+                <i class="fa fa-microphone"></i> Start
+            </button>
+            <button id="stop_button" class="button-xl" title="Stop Recoding" disabled=true><i
+                    class="fa fa-stop-circle"></i> Stop
+            </button>
+            
+        </div>
+    </div>
+    <br></br>
+
+    <div>
+        <label>Chinese Transcript: </label>
+        <label id=transcript></label>
+    </div>
+    <br></br>
+
+    <div>
+        <label>English: </label>
+        <label id="EnglishUSText"></label>
+    </div>
+    <div>
+      <audio id="EnglishUSPlayback" controls>
+        <source id="EnglishUSSource" type="audio/mp3" src="">
+      </audio>
+    </div>
+    <br></br>
+    <div>
+        <label>French: </label>
+        <label id="FrenchText"></label>
+    </div>
+    <div>
+        <audio id="FrenchPlayback" controls>
+          <source id="FrenchSource" type="audio/mp3" src="">
+        </audio>
+    </div>
+    <br></br>
+
+    <div>
+        <label>Korean: </label>
+        <label id="KoreanText"></label>
+    </div>
+    <div>
+        <audio id="KoreanPlayback" controls>
+          <source id="KoreanSource" type="audio/mp3" src="">
+        </audio>
+    </div>
+    <br></br>
+    <div>
+        <label>Japanese: </label>
+        <label id="JapaneseText"></label>
+    </div>
+    <div>
+        <audio id="JapanesePlayback" controls>
+          <source id="JapaneseSource" type="audio/mp3" src="">
+        </audio>
+    </div>
+    
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="jquery.js"></script>
+    <script src="axios.min.js"></script>
+    <script src="voice-translator-config.js"></script>
+    <script src="identity_pool.js"></script>
+    <script src="voice-translator.js"></script>
+    
+  </body>
+</html>

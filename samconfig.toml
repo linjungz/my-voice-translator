@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "voice-translator"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1j4c1jtk3bwis"
+s3_prefix = "voice-translator"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+
