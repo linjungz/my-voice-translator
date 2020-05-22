@@ -4,8 +4,6 @@ import urllib
 import json
 import logging
 
-bucket_name = 'voice-translator-translatorbucket-kvuovdlq7o4a'
-
 
 def transcribe(job_name, job_uri, language_code):
     mytranscribe = boto3.client('transcribe')
@@ -42,7 +40,7 @@ def translate(text, source_language_code, target_language_code):
 
     return response['TranslatedText']
 
-def polly(text, language_code, request_id):
+def polly(text, language_code, request_id, bucket_name):
     mypolly = boto3.client('polly')
     mys3 = boto3.client('s3')
 

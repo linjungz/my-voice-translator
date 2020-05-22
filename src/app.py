@@ -14,8 +14,8 @@ def lambda_handler(event, context):
     print(s3_key)
 
     #Transcribe:
-    #bucketName = os.environ['BucketName']
-    bucketName = 'voice-translator-translatorbucket-kvuovdlq7o4a'
+    bucketName = os.environ['BucketName']
+    #bucketName = 'voice-translator-translatorbucket-kvuovdlq7o4a'
     job_uri = 's3://' + bucketName + '/' + s3_key
     job_name = request_id
     
@@ -62,7 +62,8 @@ def lambda_handler(event, context):
         codes[language]['polly_url'] = translator.polly(
             codes[language]['translate_text'],
             codes[language]['polly_code'],
-            request_id)
+            request_id,
+            bucketName)
         
         print(codes[language]['polly_url'])
 
